@@ -10,28 +10,48 @@
 #text_area {
 	font-family: 'opendyslexic', Arial, Verdana;
 	word-spacing: 10px;
+	font-size: 2vw;
 	height: 50vh;
 	width: 100%;
 	overflow-y: auto;
-
 }
 
 #controller {
 	text-align: center;
 }
 
-#controller div {
-	padding: 10px;
+#controller > div {
+padding: 1vw;
 }
 
 .slider {
-	display: inline-block;
-	width: 300px;
 	border: 1px solid blue;
+	display: inline-block;
+	text-align: center;
+	margin: auto;
+	padding: calc(5px + 1vw);	
+	width: 30vw;
+}
+
+.slider *{
+	color: red;
+	position: relative;
+	
 }
 
 .slide_description {
-	float: left;
+	width: inherit;
+	font-size: calc(5px + 1.5vw);	
 }
 
-input[type="range"] {}
+input[type="range"] {
+	width: calc(5px + 10vw);	
+	top: 0.55vh;
+
+	
+}
+.slide_param{
+	font-size: calc(10px + 1.5vw);	
+}
+
+
