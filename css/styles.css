@@ -1,0 +1,23 @@
+#header{
+	text-align: center;	
+}
+
+#text_area{
+	
+	font-family: 'opendyslexic', Arial, Verdana;
+	word-spacing: 10px;
+	border: 1px solid black;
+	padding: 10px; 
+	padding-left: 15px; 
+	height: 50vh;
+	overflow-y: auto;
+	
+}
+
+#controller {
+	text-align: center;	
+}
+.slider{
+	padding: 10px;
+}
+
