@@ -6,14 +6,16 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/fonts/dyslexia/dyslexia.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="JS/range_value.js"></script>
+
 </head>
 
 
 <body>
     <header id="header">
         <h1> Textside</h1>
-        <h4>Upload din pdf på denne side</h3>
+        <h4>Upload din pdf på denne side</h4>
     </header>
     <div id="text_area">
         <div><span id="test">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet malesuada feugiat. 
@@ -26,7 +28,7 @@ Curabitur</span> fermentum bibendum nulla, non dictum ipsum tincidunt non. Quisq
 
     <div id="controller">
         <div class="slider">
-            Word Spacing<input type="range" id="p1" min="0" max="10" value="0"><span id="p1_param">0</span> Fonts
+            Word Spacing<input type="range" id="p1" min="0" max="10" value=""><span id="p1_param">0 </span> Fonts
             <input type="range" id="p2" min="0" max="10" value="0"><span id="p2_param">2</span>
         </div>
         <div class="slider">
