@@ -1,23 +1,37 @@
-#header{
-	text-align: center;	
+#header {
+	text-align: center;
 }
 
-#text_area{
-	
+#text {
+	width: 90vw;
+	margin: auto;
+}
+
+#text_area {
 	font-family: 'opendyslexic', Arial, Verdana;
 	word-spacing: 10px;
-	border: 1px solid black;
-	padding: 10px; 
-	padding-left: 15px; 
 	height: 50vh;
+	width: 100%;
 	overflow-y: auto;
-	
+
 }
 
 #controller {
-	text-align: center;	
+	text-align: center;
 }
-.slider{
+
+#controller div {
 	padding: 10px;
 }
 
+.slider {
+	display: inline-block;
+	width: 300px;
+	border: 1px solid blue;
+}
+
+.slide_description {
+	float: left;
+}
+
+input[type="range"] {}
