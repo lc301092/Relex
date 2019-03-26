@@ -1,3 +1,7 @@
+body {
+	background-color: #fff1f1;
+}
+
 #header {
 	text-align: center;
 }
@@ -8,12 +12,15 @@
 }
 
 #text_area {
+	background-color: #fafafa;
+	box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.75);
 	font-family: 'opendyslexic', Arial, Verdana;
-	word-spacing: 10px;
+	color: #0a0aaa;
 	font-size: 2vw;
 	height: 50vh;
 	width: 100%;
 	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 #controller {
@@ -21,37 +28,42 @@
 }
 
 #controller > div {
-padding: 1vw;
+	padding: 1vw;
 }
 
 .slider {
-	border: 1px solid blue;
+	background-color: #fafafa;
+	box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.75);
+	font-family: 'opendyslexic', Arial, Verdana;
 	display: inline-block;
 	text-align: center;
 	margin: auto;
-	padding: calc(5px + 1vw);	
-	width: 30vw;
+	padding: calc(5px + 1vw);
+	width: 20vw;
+	height: calc(20px + 5vw);
 }
 
-.slider *{
-	color: red;
+.slider * {
+	color: #0a0aaa;
 	position: relative;
-	
+	text-align: center;
+
+
 }
 
 .slide_description {
-	width: inherit;
-	font-size: calc(5px + 1.5vw);	
+	/*	width: inherit;*/
+	display: block;
+	font-size: calc(5px + 1.5vw);
 }
 
 input[type="range"] {
-	width: calc(5px + 10vw);	
+	width: calc(5px + 10vw);
 	top: 0.55vh;
 
-	
-}
-.slide_param{
-	font-size: calc(10px + 1.5vw);	
+
 }
 
-
+.slide_param {
+	font-size: calc(10px + 1.5vw);
+}
