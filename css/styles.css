@@ -36,7 +36,7 @@ body {
     box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.75);
     font-family: 'opendyslexic', Arial, Verdana;
     display: inline-block;
-    text-align: center;
+    vertical-align: top;
     margin: auto;
     padding: calc(5px + 1vw);
     width: 20vw;
@@ -62,4 +62,9 @@ input[type="range"] {
 
 .slide_param {
     font-size: calc(10px + 1.5vw);
+}
+
+#p2 {
+    width: 90%;
+    font-size: calc(5px + 1.5vw);
 }
