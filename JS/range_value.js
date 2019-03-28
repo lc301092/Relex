@@ -18,7 +18,7 @@ function updateSpacing() {
     $("#text_area").css("word-spacing", 5 * spacing)
 };
 
-function updateParagshs() {
+function updateParagraphs() {
     // get all text (use textfield id and value)
     // count words or end of sentences.
     // get slider value
@@ -30,13 +30,20 @@ function updateFont() {
     var fontType = ['opendyslexic', 'Times New Roman', 'Arial']
 
     $("#text_area").css("font-family", fontType[font]);
-    // get the selected font
-    // set the new font on the text field.
-
 }
 
 function updateDifficulty() {
     // Here should call the algorithm which will return some information
     // for now we will use synoWords which is a hardcoded variable.
 
+}
+
+function pageLayout() {
+    // Here we should make some premade page layouts that fit dyslexics. 
+
+}
+
+function updateFontSize() {
+    var size = $("#p5").val();
+    $("#text_area").css("font-size", 2 + (size / 4) + 'vw')
 }
