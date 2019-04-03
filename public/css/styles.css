@@ -1,5 +1,5 @@
 body {
-    background-color: #fff1f1;
+    background-color: bisque;
 }
 
 #header {
@@ -14,8 +14,10 @@ body {
 #text_area {
     background-color: #fafafa;
     box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.75);
+	
     font-family: 'opendyslexic', Arial, Verdana;
     color: #0a0aaa;
+	padding-left: 10px;
     font-size: 2vw;
     height: 50vh;
     width: 100%;
