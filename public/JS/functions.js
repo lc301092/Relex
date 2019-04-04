@@ -1,15 +1,10 @@
+
+
 function updateSpacing() {
     var spacing = $("#p1").val();
     $("#text_area").css("word-spacing", 5 * spacing)
 };
 
-function updateParagraphs() {
-
-    // get all text (use textfield id and value)
-    // count words or end of sentences.
-    // get slider value
-
-}
 
 
 
@@ -18,8 +13,9 @@ function updateDifficulty() {
     // for now we will use synoWords which is a hardcoded variable.
     // this is either 0,1,2
     var difficulty = $('#p4').val();
-    var $synonyms = $('.synonym');
-    console.log('synonyms should be ' + difficulty);
+    var $synonyms = $('#text_area .synonym');
+    console.log('synonyms should be changed to difficulty: ' + difficulty + ", there are " + $synonyms.length + " words to change");
+    console.log($synonyms);
     //	console.log($synonyms[0].getAttribute('class'));
 
     for (i = 0; i < $synonyms.length; i++) {
@@ -37,6 +33,8 @@ function updateDifficulty() {
 }
 
 function getFonts() {
+	// named incorrectly it also updates fonts
+	// should be split into two functions or renamed
     var $menu = $("#p2");
     for (i = 0; i < fontTypes.length; i++) {
         var $option = $('<option/>');
@@ -73,12 +71,19 @@ function getIndexOfWord(arr, k) {
     return [];
 }
 
+function updateFontSize() {
+    var size = $("#p5").val();
+    $("#text_area").css("font-size", 2 + (size / 10) + 'vw')
+}
+
 function pageLayout() {
     // Here we should make some premade page layouts that fit dyslexics. 
 
 }
+function updateParagraphs() {
 
-function updateFontSize() {
-    var size = $("#p5").val();
-    $("#text_area").css("font-size", 2 + (size / 4) + 'vw')
+    // get all text (use textfield id and value)
+    // count words or end of sentences.
+    // get slider value
+
 }

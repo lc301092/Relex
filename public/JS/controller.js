@@ -3,6 +3,7 @@ const synoWords = [
     ["fastlagt", "predefineret", "forudbestemt"],
     ["ens", "samme", "ensbetydende"]
 ];
+
 const fontTypes = ['opendyslexic', 'Times New Roman', 'Arial', 'Verdana'];
 
 $(document).ready(function () {
