@@ -1,7 +1,13 @@
 const synoWords = [
     ["tænke over", "overveje", "fundere over"],
     ["fastlagt", "predefineret", "forudbestemt"],
-    ["ens", "samme", "ensbetydende"]
+    ["ens", "samme", "ensbetydende"],
+	["tjekket.","checket.","undersøgt."],
+	["dårligt.","slemt.","værst."],
+	["vigtigt","nødvendigt","essentielt"],
+	["præcis", "eksakt", "nøjagtig"],
+	["stiller", "læner", "hviler"],
+	["travle","travle","hektiske"]
 ];
 
 const fontTypes = ['opendyslexic', 'Times New Roman', 'Arial', 'Verdana'];

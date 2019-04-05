@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="/css/fonts/dyslexia/dyslexia.css">
+	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" href="/css/synonyms.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="/JS/controller.js"></script>
+	<script src="/JS/functions.js"></script>
+
+	<!--This is outcommented and can be used instead when using text.html	-->
+	<!--
+	<link rel="stylesheet" href="/public/css/fonts/dyslexia/dyslexia.css">
+	<link rel="stylesheet" href="/public/css/styles.css">
+	<link rel="stylesheet" href="/public/css/synonyms.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="/public/JS/controller.js"></script>
+	<script src="/public/JS/functions.js"></script>
+-->
+
+
+</head>
+
+<body>
+
+	<div id="content">
+
+		<header id="header">
+			<h1> Textside</h1>
+			<h4>Upload din pdf på denne side</h4>
+		</header>
+		<div id="controller">
+			<!--		<div>-->
+			<h3 id="menu">Menu</h3>
+			<div class="slider">
+				<span class="slide_description">ord afstand</span><input type="range" id="p1" min="0" max="10" value="0" onchange="updateSpacing()"><span class="slide_param" id="p1_param">0</span>
+			</div>
+			<div class="slider">
+				<span class="slide_description">tekst størrelse</span> <input type="range" id="p5" min="1" max="10" value="0" onchange="updateFontSize()"><span class="slide_param" id="p5_param">0</span>
+			</div>
+			<!--		</div>-->
+			<!--		<div>-->
+			<div class="slider">
+				<span class="slide_description">skrifttype</span> <select id="p2" onchange="updateFont()"></select>
+			</div>
+			<div class="slider">
+				<span class="slide_description synonym">ord sværhed</span> <input type="range" id="p4" min="0" max="2" value="1" onchange="updateDifficulty()"><span class="slide_param" id="p4_param">1</span>
+			</div>
+
+			<!--		</div>-->
+			<div hidden>
+				<div class="slider">
+					<span class="slide_description">paragraphs</span> <input type="range" id="p3" min="0" max="10" value="0" disabled><span class="slide_param" id="p3_param">0</span>
+				</div>
+			</div>
+			<!--
+
+		<div>
+		<input type="range" id="p5" min="0" max="10" value="0"><span id="p5_param">1</span>
+		<input type="range" id="p6" min="0" max="10" value="0"><span id="p6_param">8</span>
+		<input type="range" id="p7" min="0" max="10" value="0"><span id="p7_param">10</span>
+		</div>
+-->
+			<!--
+
+		<div>
+			<input type="button" value="RANDOM" id="randomize" onclick="alert('virker ikke endnu!')">
+			<input type="button" value="UPLOAD" id="Format" onclick="alert('virker ikke endnu!')">
+		</div>
+-->
+		</div>
+		<div id="text">
+			<div id="text_area">
+Tingene går så let i fisk. Bliver ikke til noget. Tænk hvis hun hele sommeren igennem ikke får bestilt en tid, hvis håret bare vokser og vokser og bliver mere og mere gråt i det og hængende. Hun stopper op på fortovet og ånder tungt. Lyden fra hjertet er hurtig og tikkende som en lille, præcis bombe. Hun har det med at blive svimmel på åben gade, har altid haft det sådan, men det er nok blevet værre efter børnene er kommet. Hun tænker at det sikkert er nødvendigt at gå til lægen. Bare lige for at blive checket. Det lyder nemt: lige at blive checket. Helbredsundersøgel­se, det er da noget mange mennesker får foretaget en gang imellem. Måske hun kunne få Kim til at gå med. Så ville det nok ikke være så slemt. Jeg kunne spørge ham i aften, tæn­ker hun og fisker sine cigaretter op af tasken. Tænder med lighteren og holder den første, susende røg længe i sig.
+Mange, travle mennesker går forbi hende. Hun læner sig op ad en husmur og lukker øjnene for lyset.
+
+			</div>
+		</div>
+	</div>
+
+	</div>
+</body>
+
+</html>

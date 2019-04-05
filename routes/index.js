@@ -8,4 +8,9 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/tekstb', function(req, res, next) {
+  res.render('tekstb', { 
+	  title: 'Prototype v1 Relex' 
+  });
+});
 module.exports = router;
