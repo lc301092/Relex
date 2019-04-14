@@ -1,37 +1,36 @@
 body {
-    background-color: bisque;
+	background-color: #F8F9FA;
 }
 
-#content{
-	    vertical-align: top;
+#content {
+	vertical-align: top;
 }
 
 #header {
-    text-align: center;
+	text-align: center;
 }
 
 
 #text {
 	display: inline-block;
-    width: 60vw;
-    margin: auto;
+	width: 60vw;
+	margin: auto;
 }
 
 
 #text_area {
-    background-color: #fafafa;
-    box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.75);
-    font-family: 'opendyslexic', Arial, Verdana;
-    color: #0a0aaa;
+	box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.75);
+	font-family: 'opendyslexic', Arial, Verdana;
+	padding: 1vw;
 	padding-left: 2vw;
-	padding-right: 1vw;
-	padding-top: 2vw;
-    font-size: 2vw;
-    width: 100%;
-    overflow-y: visible;
-    overflow-x: hidden;
+	font-size: 2vw;
+	width: 100%;
+	overflow-y: visible;
+	overflow-x: hidden;
 	position: relative;
 	left: 30vw;
+	color: black;
+	background-color: cornsilk;
 }
 
 
@@ -43,57 +42,58 @@ body {
 	display: inline-block;
 	position: fixed;
 	left: 3vw;
+	top: 3vh;
 	margin: auto;
-    text-align: center;
-    background-color: #fafafa;
-    box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.75);
-/*	border: 1px solid black;*/
+	text-align: center;
+	box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.75);
+	/*	border: 1px solid black;*/
+	color: black;
+	background-color: cornsilk;
 }
 
-#controller>div {
-    padding: 1vw;
+#controller > div {
+	padding: 1vw;
 	margin: 1vw
 }
 
 .slider {
-    background-color: #fafafa;
-/*    box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.75);*/
-    font-family: 'opendyslexic', Arial, Verdana;
+	font-family: 'opendyslexic', Arial, Verdana;
 	border: 1px solid black;
-/*
-	border-bottom: 1px solid black;
-	border-top: 1px solid black;
-*/
-    display: block;
-    vertical-align: top;
-    margin: auto;
-    padding: calc(5px + 1vw);
-    width: calc(20px + 15vw);
-    height: calc(30px + 3vw);
+	display: block;
+	vertical-align: top;
+	margin: auto;
+	padding: calc(5px + 1vw);
+	width: calc(20px + 15vw);
+	height: calc(30px + 3vw);
 }
 
 .slider * {
-    color: #0a0aaa;
-    position: relative;
-    text-align: center;
+	color: ;
+	position: relative;
+	text-align: center;
 }
 
 .slide_description {
-    /*	width: inherit;*/
-    display: block;
-    font-size: calc(5px + 1.2vw);
+	/*	width: inherit;*/
+	display: block;
+	font-size: calc(5px + 1.2vw);
 }
 
 input[type="range"] {
-    width: calc(5px + 10vw);
-    top: 0.55vh;
+	width: calc(5px + 10vw);
+	top: 0.55vh;
 }
 
 .slide_param {
-    font-size: calc(10px + 0.5vw);
+	font-size: calc(10px + 0.5vw);
 }
 
 #p2 {
-    width: 90%;
-    font-size: calc(5px + 1.5vw);
+	width: 90%;
+	font-size: calc(5px + 1.5vw);
+}
+
+#p3 {
+	width: 90%;
+	font-size: calc(5px + 1.5vw);
 }
