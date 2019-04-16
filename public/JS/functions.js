@@ -87,3 +87,4 @@ function updateParagraphs() {
     // get slider value
 
 }
+
