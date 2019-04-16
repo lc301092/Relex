@@ -38,6 +38,7 @@
 <body>
 
     <div id="content">
+
         <header id="header">
             <h1> Textside</h1>
             <h4>Upload din pdf på denne side</h4>
@@ -49,7 +50,7 @@
                 <span class="slide_description">ord afstand</span><input type="range" id="p1" min="0" max="10" value="0" onchange="updateSpacing()"><span class="slide_param" id="p1_param">0</span>
             </div>
             <div class="slider">
-                <span class="slide_description">tekst størrelse</span> <input type="range" id="p5" min="1" max="10" value="0" onchange="updateFontSize()"><span class="slide_param" id="p5_param">0</span>
+                <span class="slide_description">tekst størrelse</span> <input type="number" id="p5" onchange="updateFontSize()">
             </div>
             <!--		</div>-->
             <!--		<div>-->
@@ -61,11 +62,10 @@
             </div>
 
             <!--		</div>-->
-            <div hidden>
-                <div class="slider">
-                    <span class="slide_description">paragraphs</span> <input type="range" id="p3" min="0" max="10" value="0" disabled><span class="slide_param" id="p3_param">0</span>
-                </div>
+            <div class="slider">
+                <span class="slide_description">farver</span> <select id="p3" onchange="updateColors()"></select>
             </div>
+
             <!--
 
 		<div>

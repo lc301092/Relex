@@ -1,5 +1,5 @@
 body {
-    background-color: bisque;
+    background-color: #F8F9FA;
 }
 
 #content {
@@ -17,31 +17,18 @@ body {
 }
 
 #text_area {
-    background-color: #fafafa;
     box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.75);
     font-family: 'opendyslexic', Arial, Verdana;
-    color: #0a0aaa;
+    padding: 1vw;
     padding-left: 2vw;
-    padding-right: 1vw;
-    padding-top: 2vw;
     font-size: 2vw;
     width: 100%;
     overflow-y: visible;
     overflow-x: hidden;
     position: relative;
     left: 30vw;
-}
-
-#uploadForm {
-    padding-left: 2vw;
-    padding-right: 1vw;
-    padding-top: 2vw;
-    font-size: 2vw;
-    width: 100%;
-    overflow-y: visible;
-    overflow-x: hidden;
-    position: relative;
-    left: 30vw;
+    color: black;
+    background-color: cornsilk;
 }
 
 
@@ -53,11 +40,13 @@ body {
     display: inline-block;
     position: fixed;
     left: 3vw;
+    top: 3vh;
     margin: auto;
     text-align: center;
-    background-color: #fafafa;
     box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.75);
     /*	border: 1px solid black;*/
+    color: black;
+    background-color: cornsilk;
 }
 
 #controller>div {
@@ -66,14 +55,8 @@ body {
 }
 
 .slider {
-    background-color: #fafafa;
-    /*    box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.75);*/
-    font-family: 'opendyslexic', Arial, Verdana;
+    font-family: 'opendyslexic', Arial, Calibri;
     border: 1px solid black;
-    /*
-	border-bottom: 1px solid black;
-	border-top: 1px solid black;
-*/
     display: block;
     vertical-align: top;
     margin: auto;
@@ -83,7 +66,7 @@ body {
 }
 
 .slider * {
-    color: #0a0aaa;
+    color: ;
     position: relative;
     text-align: center;
 }
@@ -103,33 +86,9 @@ input[type="range"] {
     font-size: calc(10px + 0.5vw);
 }
 
-#p2 {
+#p2,
+#p3,
+#p5 {
     width: 90%;
     font-size: calc(5px + 1.5vw);
-}
-
-.dropFile {
-    width: 60vw;
-    display: inline-block;
-    margin: auto;
-    border: 2px dashed #ccc;
-    color: #ccc;
-    text-align: center;
-    line-height: 300px;
-    position: relative;
-    left: 30vw;
-    background-color: cornsilk;
-}
-
-.dragover {
-    width: 60vw;
-    display: inline-block;
-    margin: auto;
-    border: 2px dashed #000;
-    color: #000;
-    text-align: center;
-    line-height: 300px;
-    position: relative;
-    left: 30vw;
-    background-color: cornsilk;
 }
