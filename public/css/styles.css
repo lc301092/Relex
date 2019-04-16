@@ -57,7 +57,7 @@ body {
 }
 
 .slider {
-	font-family: 'opendyslexic', Arial, Verdana;
+	font-family: 'opendyslexic', Arial, Calibri;
 	border: 1px solid black;
 	display: block;
 	vertical-align: top;
@@ -88,12 +88,9 @@ input[type="range"] {
 	font-size: calc(10px + 0.5vw);
 }
 
-#p2 {
+#p2, #p3, #p5 {
 	width: 90%;
 	font-size: calc(5px + 1.5vw);
 }
 
-#p3 {
-	width: 90%;
-	font-size: calc(5px + 1.5vw);
-}
+ 

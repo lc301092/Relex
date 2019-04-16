@@ -84,7 +84,7 @@ function getIndexOfWord(arr, k) {
 
 function updateFontSize() {
 	var size = $("#p5").val();
-	$("#text_area").css("font-size", 2 + (size / 10) + 'vw')
+	$("#text_area").css("font-size", size/12 + 'em');
 }
 
 function pageLayout() {
