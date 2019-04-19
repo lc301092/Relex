@@ -11,27 +11,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/JS/controller.js"></script>
     <script src="/JS/functions.js"></script>
-    <!--    <script src="/JS/dropzone.js"></script>-->
     <script src="/JS/tesseract.js"></script>
     <script src='https://cdn.jsdelivr.net/gh/naptha/tesseract.js@v1.0.14/dist/tesseract.min.js'></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
-
-
-
-
-
-    <!--This is outcommented and can be used instead when using text.html	-->
-
-
-    <!--    <link rel="stylesheet" href="/public/css/fonts/dyslexia/dyslexia.css">
-    <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="stylesheet" href="/public/css/synonyms.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/public/JS/controller.js"></script>
-    <script src="/public/JS/functions.js"></script>-->
-
-
-
 
 </head>
 
@@ -41,10 +23,13 @@
 
         <header id="header">
             <h1> Textside</h1>
-            <h4>Upload din pdf på denne side</h4>
+            <form  id="uploadForm" enctype="multipart/form-data" action="/api/photo" method="post">
+                <input type="file" name="userPhoto" />
+                <input type="submit" value="Upload Image" name="submit">
+                <span id="status"></span>
+            </form>
         </header>
         <div id="controller">
-            <!--		<div>-->
             <h3 id="menu">Menu</h3>
             <div class="slider">
                 <span class="slide_description">ord afstand</span><input type="range" id="p1" min="0" max="10" value="0" onchange="updateSpacing()"><span class="slide_param" id="p1_param">0</span>
@@ -52,8 +37,7 @@
             <div class="slider">
                 <span class="slide_description">tekst størrelse</span> <input type="number" id="p5" onchange="updateFontSize()">
             </div>
-            <!--		</div>-->
-            <!--		<div>-->
+           
             <div class="slider">
                 <span class="slide_description">skrifttype</span> <select id="p2" onchange="updateFont()"></select>
             </div>
@@ -61,47 +45,16 @@
                 <span class="slide_description synonym">ord sværhed</span> <input type="range" id="p4" min="0" max="2" value="1" onchange="updateDifficulty()"><span class="slide_param" id="p4_param">1</span>
             </div>
 
-            <!--		</div>-->
             <div class="slider">
                 <span class="slide_description">farver</span> <select id="p3" onchange="updateColors()"></select>
             </div>
 
-            <!--
 
-		<div>
-		<input type="range" id="p5" min="0" max="10" value="0"><span id="p5_param">1</span>
-		<input type="range" id="p6" min="0" max="10" value="0"><span id="p6_param">8</span>
-		<input type="range" id="p7" min="0" max="10" value="0"><span id="p7_param">10</span>
-		</div>
--->
-            <!--
-
-		<div>
-			<input type="button" value="RANDOM" id="randomize" onclick="alert('virker ikke endnu!')">
-			<input type="button" value="UPLOAD" id="Format" onclick="alert('virker ikke endnu!')">
-		</div>
--->
         </div>
-
-        <!--        Upload your files to the webbrowser code
-        <div id="uploads"> </div>
-        <form ref='uploadForm' class="dropFile" id=dropFile name="sampleFile" action='http://localhost:3000/upload' method='post' encType="multipart/form-data"> Drop files here to upload
-            <input type="file" name="sampleFile" id="sample_file" hidden/>
-            <input type='submit' value='Upload!' hidden/>
-        </form>-->
 
 
         <div id="text">
 
-            <!--Form v1            <form ref='uploadForm' id='uploadForm' method='post' action='http://localhost:3000/upload' encType="multipart/form-data">
-                <input type="file" name="sampleFile" />
-                <input type='submit' value='Upload!' />
-            </form>-->
-            <form id="uploadForm" enctype="multipart/form-data" action="/api/photo" method="post">
-                <input type="file" name="userPhoto" />
-                <input type="submit" value="Upload Image" name="submit">
-                <span id="status"></span>
-            </form>
             <div id="text_area">
                 Vi skal overveje at bruge en predefineret tekst, så vi kan teste ændringen af samme ord, hvor vi hardcoder dem. Men prøv at udtale ordet interpercifikulær. Det skriver vi lige igen. Vi skal overveje at bruge en predefineret tekst, så vi kan teste ændringen af samme ord, hvor vi hardcoder dem. Men prøv at udtale ordet interpercifikulær. Faktisk så findes ordet ikke, men prøv lige at overveje , hvis det gjorde. Hvad nu hvis der ikke findes andre af samme ord, altså synonymer. Det bliver svært at lave ændringer til de ord. Vi skal overveje at bruge en predefineret tekst, så vi kan teste ændringen af samme ord, hvor vi hardcoder dem. Men prøv at udtale ordet interpercifikulær. Det skriver vi lige igen. Vi skal overveje at bruge en predefineret tekst, så vi kan teste ændringen af samme ord, hvor vi hardcoder dem. Men prøv at udtale ordet interpercifikulær. Faktisk så findes ordet ikke, men prøv lige at overveje , hvis det gjorde. Hvad nu hvis der ikke findes andre af samme ord, altså synonymer. Det bliver svært at lave ændringer til de ord.
             </div>
