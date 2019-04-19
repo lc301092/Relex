@@ -16,7 +16,8 @@ body {
     margin: auto;
 }
 
-#text_area {
+#text_area,
+#uploadForm {
     box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.75);
     font-family: 'opendyslexic', Arial, Verdana;
     padding: 1vw;
