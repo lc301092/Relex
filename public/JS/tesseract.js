@@ -1,62 +1,73 @@
-$(document).ready(function () {
-    var img = new Image();
-
     const config = {
         lang: 'dan',
         oem: 1,
         psm: 3
-    }
+    };
+    var img;
+
+    $(document).ready(function () {
 
 
-    $('#uploadForm').submit(function () {
-        $("#status").empty().text("File is uploading...");
-        $(this).ajaxSubmit({
-            error: function (xhr) {
-                status('Error: ' + xhr.status);
-            },
+        $('#uploadForm').submit(function () {
+            $("#status").empty().text("File is uploading...");
+            $(this).ajaxSubmit({
+                error: function (xhr) {
+                    status('Error: ' + xhr.status);
+                },
+                success: function (response) {
+                    var imgData = JSON.parse(response);
+                    console.log('this is the response: ', imgData);
+                    $("#status").empty().text('done');
+                    img = new Image();
+                    img.crossOrigin = "Anonymous";
 
-            success: function (response) {
-                $("#status").empty().text(response);
-                console.log(response);
+                    var src = "./" + imgData.destination.slice(9) + "/" + imgData.filename;
+                    var img = new Image;
+                    var canvas = document.createElement("canvas");
+                    var ctx = canvas.getContext("2d");
+                    img.crossOrigin = "Anonymous";
+                    img.onload = function () {
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        ctx.drawImage(img, 0, 0);
+                        Tesseract.recognize(ctx, config)
+                            .then(function (result) {
+                                console.log(result);
+                                document.getElementById("text_area")
+                                    .innerText = result.text;
+                            });
+                    }
+                    img.src = src;
+                    //                    test();
+                }
 
-                //img.src = "uploads/test.PNG";
-            }
+            });
 
+            //Very important line, it disable the page refresh.
+            return false;
         });
 
         // handle image to text
-        /*       Tesseract.recognize(img, config)
-                   .then(function (result) {
-                       console.log(result)
-                   })*/
 
-        //Very important line, it disable the page refresh.
-        return false;
+        //        $("#custom_browse").click(function () {
+        //            console.log('yesssss');
+        //            test();
+        //        });
+
     });
-});
 
-//v1
-/* $("#uploadForm").bind("submit", function (event) {
-        event.preventDefault();
-        console.log("test");
-
-        // $("#uploadForm").unbind("submit").submit();
-
-});*/
-
-// handle image to text
-/*    Tesseract.recognize(img, config)
-        .then(function (result) {
-            console.log(result)
-        })*/
+    function test() {
+        Tesseract.recognize(img, config)
+            .then(function (result) {
+                console.log(result);
+            });
+    };
 
 
+    /*Tesseract.recognize(img, config).progress((progress) => {}).then((result) => {
+        console.log(result);
+    })*/
 
-
-/*Tesseract.recognize(img, config).progress((progress) => {}).then((result) => {
-    console.log(result);
-})*/
-
-/*        Tesseract.recognize(pdf).progress((progress) => {
-            
-        }).then((result) => {});*/
+    /*        Tesseract.recognize(pdf).progress((progress) => {
+                
+            }).then((result) => {});*/
