@@ -1,6 +1,5 @@
 $(document).ready(function () {
     var img = new Image();
-    img.src = "JS/test.PNG";
 
     const config = {
         lang: 'dan',
@@ -12,7 +11,6 @@ $(document).ready(function () {
     $('#uploadForm').submit(function () {
         $("#status").empty().text("File is uploading...");
         $(this).ajaxSubmit({
-
             error: function (xhr) {
                 status('Error: ' + xhr.status);
             },
@@ -20,8 +18,18 @@ $(document).ready(function () {
             success: function (response) {
                 $("#status").empty().text(response);
                 console.log(response);
+
+                //img.src = "uploads/test.PNG";
             }
+
         });
+
+        // handle image to text
+        /*       Tesseract.recognize(img, config)
+                   .then(function (result) {
+                       console.log(result)
+                   })*/
+
         //Very important line, it disable the page refresh.
         return false;
     });
@@ -45,10 +53,9 @@ $(document).ready(function () {
 
 
 
-/*    Tesseract.recognize(img, config).progress((progress) => {
-    }).then((result) => {
-        console.log(result);
-    })*/
+/*Tesseract.recognize(img, config).progress((progress) => {}).then((result) => {
+    console.log(result);
+})*/
 
 /*        Tesseract.recognize(pdf).progress((progress) => {
             
