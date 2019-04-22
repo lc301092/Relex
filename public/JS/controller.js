@@ -36,7 +36,6 @@ $(document).ready(function () {
     });
 
     setupFonts();
-
     setupColors();
 
     // look for words that we know has synonym and wrap a span element around it

@@ -4,8 +4,6 @@ function updateSpacing() {
 };
 
 
-
-
 function updateDifficulty() {
     // Here should call the algorithm which will return some information
     // for now we will use synoWords which is a hardcoded variable.
@@ -59,7 +57,6 @@ function setupColors() {
 function updateFont() {
     var font = $("#p2").val();
     $("#text_area").css("font-family", fontTypes[fontTypes.indexOf(font)]);
-
 }
 
 /**
