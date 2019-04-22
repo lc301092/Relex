@@ -2,14 +2,20 @@ $(document).ready(function () {
 
     var dropzone = document.getElementById('dropFile');
     var file;
-    //var pdf = new Image();
-    //pdf.src = "JS/test.PNG";
+    var pdf = new Image();
+    pdf.src = "JS/test.PNG";
 
     const config = {
         lang: 'dan',
         oem: 1,
         psm: 3
     }
+    // handle image to text
+    Tesseract.recognize(pdf, config)
+        .then(function (result) {
+            console.log(result)
+        })
+
 
     dropzone.ondragover = function () {
         this.className = 'dragover';
@@ -28,13 +34,6 @@ $(document).ready(function () {
         // changing the CSS
         this.className = 'dropFile';
         dropHandler(e);
-
-
-        // handle image to text
-        /*        Tesseract.recognize(url, config)
-                    .then(function (result) {
-                        console.log(result)
-                    })*/
     }
 
     function dropHandler(ev) {

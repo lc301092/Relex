@@ -14,9 +14,9 @@
         "http-errors": "~1.6.2",
         "jade": "~1.11.0",
         "morgan": "~1.9.0",
+        "multer": "1.1.0",
         "nodemon": "^1.18.10",
-        "tesseract.js": "^1.0.14",
-        "multer": "1.1.0"
+        "tesseract.js": "^1.0.14"
     },
     "devDependencies": {
         "should": "~7.1.0",
