@@ -61,4 +61,7 @@ $(document).ready(function () {
         }
         $text.append($word, " ");
     }
+	
+	// setup filepicker and upload buttons
+
 });

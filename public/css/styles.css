@@ -16,8 +16,8 @@ body {
     margin: auto;
 }
 
-#text_area,
-#uploadForm {
+#uploadForm, 
+#text_area{
     box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.75);
     font-family: 'opendyslexic', Arial, Verdana;
     padding: 1vw;
@@ -33,15 +33,15 @@ body {
 }
 
 
-/* Menu and items
-
-*/
+#uploadForm{	
+	text-align: center;
+} 
 
 #controller {
     display: inline-block;
     position: fixed;
     left: 3vw;
-    top: 3vh;
+    top: 11.5vh;
     margin: auto;
     text-align: center;
     box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.75);
@@ -52,8 +52,16 @@ body {
 
 #controller>div {
     padding: 1vw;
-    margin: 1vw
+    margin: 1vw;
+	height: 8vh;
 }
+
+/*this is just the h3-tag=*/
+#menu {
+	margin-bottom: 5%;
+    margin-top: 5%;
+}
+
 
 .slider {
     font-family: 'opendyslexic', Arial, Calibri;
@@ -61,9 +69,9 @@ body {
     display: block;
     vertical-align: top;
     margin: auto;
-    padding: calc(5px + 1vw);
-    width: calc(20px + 15vw);
-    height: calc(30px + 3vw);
+/*    padding: calc(5px + 1vw);*/
+    width: calc(20px + 14vw);
+/*    height: calc(30px + 3vw);*/
 }
 
 .slider * {
@@ -76,6 +84,7 @@ body {
     /*	width: inherit;*/
     display: block;
     font-size: calc(5px + 1.2vw);
+	margin-top: calc(-2px + -0.1vw);
 }
 
 input[type="range"] {
@@ -88,8 +97,11 @@ input[type="range"] {
 }
 
 #p2,
-#p3,
-#p5 {
+#p3{
     width: 90%;
-    font-size: calc(5px + 1.5vw);
+	height: 50%;
+    font-size: calc(8px + 1vw);
 }
+#p5{	
+    width: 50%;
+} 
