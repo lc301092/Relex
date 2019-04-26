@@ -35,7 +35,8 @@ router.post('/api/photo', function (req, res) {
         var tjek = JSON.stringify(req.file);
         console.log('result', tjek);
         if (err) {
-            return res.end("Error uploading file.");
+			console.log(err);
+            return res.end("Error uploading file: " + err);
         }
         res.end(tjek);
     });

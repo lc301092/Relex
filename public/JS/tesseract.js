@@ -3,7 +3,6 @@
     	oem: 1,
     	psm: 3
     };
-    var img;
 
     $(document).ready(function () {
 
