@@ -1,79 +1,84 @@
 body {
-    background-color: bisque;
+    background-color: #F8F9FA;
 }
 
-#content{
-	    vertical-align: top;
+#content {
+    vertical-align: top;
 }
 
 #header {
     text-align: center;
+	position: sticky;
+	left: 15vw;
+
+	
 }
 
-
 #text {
-	display: inline-block;
+    display: inline-block;
     width: 60vw;
     margin: auto;
 }
 
-
-#text_area {
-    background-color: #fafafa;
+#text_area{
     box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.75);
     font-family: 'opendyslexic', Arial, Verdana;
-    color: #0a0aaa;
-	padding-left: 2vw;
-	padding-right: 1vw;
-	padding-top: 2vw;
+    padding: 1vw;
+    padding-left: 2vw;
     font-size: 2vw;
     width: 100%;
     overflow-y: visible;
     overflow-x: hidden;
-	position: relative;
-	left: 30vw;
+    position: relative;
+    left: 30vw;
+    color: black;
+    background-color: cornsilk;
 }
 
 
-/* Menu and items
-
-*/
+#uploadForm{	
+	text-align: center;
+} 
 
 #controller {
-	display: inline-block;
-	position: fixed;
-	left: 3vw;
-	margin: auto;
+    display: inline-block;
+    position: fixed;
+    left: 3vw;
+    top: 11.5vh;
+    margin: auto;
     text-align: center;
-    background-color: #fafafa;
     box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.75);
-/*	border: 1px solid black;*/
+    /*	border: 1px solid black;*/
+    color: black;
+    background-color: cornsilk;
 }
 
 #controller>div {
     padding: 1vw;
-	margin: 1vw
+    margin: 1vw;
+	height: 8vh;
 }
 
+/*this is just the h3-tag=*/
+#menu {
+	margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+
 .slider {
-    background-color: #fafafa;
-/*    box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.75);*/
-    font-family: 'opendyslexic', Arial, Verdana;
-	border: 1px solid black;
-/*
-	border-bottom: 1px solid black;
-	border-top: 1px solid black;
-*/
+    font-family: 'opendyslexic', Arial, Calibri;
+    border: 1px solid black;
     display: block;
     vertical-align: top;
     margin: auto;
-    padding: calc(5px + 1vw);
-    width: calc(20px + 15vw);
-    height: calc(30px + 3vw);
+/*    padding: calc(5px + 1vw);*/
+    width: calc(20px + 14vw);
+/*    height: calc(30px + 3vw);*/
 }
 
 .slider * {
-    color: #0a0aaa;
+    color: ;
     position: relative;
     text-align: center;
 }
@@ -82,6 +87,7 @@ body {
     /*	width: inherit;*/
     display: block;
     font-size: calc(5px + 1.2vw);
+	margin-top: calc(-2px + -0.1vw);
 }
 
 input[type="range"] {
@@ -93,7 +99,12 @@ input[type="range"] {
     font-size: calc(10px + 0.5vw);
 }
 
-#p2 {
+#p2,
+#p3{
     width: 90%;
-    font-size: calc(5px + 1.5vw);
+	height: 50%;
+    font-size: calc(8px + 1vw);
 }
+#p5{	
+    width: 50%;
+} 
