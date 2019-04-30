@@ -2,12 +2,12 @@ const synoWords = [
     ["tænke over", "overveje", "fundere over"],
     ["fastlagt", "predefineret", "forudbestemt"],
     ["ens", "samme", "ensbetydende"],
-	["tjekket.", "checket.", "undersøgt."],
-	["dårligt.", "slemt.", "værst."],
-	["vigtigt", "nødvendigt", "essentielt"],
+	["tjekket.","checket.","undersøgt."],
+	["dårligt.","slemt.","værst."],
+	["vigtigt","nødvendigt","essentielt"],
 	["præcis", "eksakt", "nøjagtig"],
 	["stiller", "læner", "hviler"],
-	["travle", "travle", "hektiske"]
+	["travle","travle","hektiske"]
 ];
 
 const fontTypes = [
@@ -36,24 +36,38 @@ const textNback = [
 
 $(document).ready(function () {
 
-	$("[type=range]").change(function () {
-		var newValue = $(this).val();
-		$(this).next().text(newValue);
-		$('#p1_param').text(newValue);
-	});
-	// called from functions.js 
-	setupFonts();
-	setupColors();
-	updateSynonyms();
-	setupSynonyms();
+    $("[type=range]").change(function () {
+        var newValue = $(this).val();
+        $(this).next().text(newValue);
+    });
 
+    setupFonts();
+    setupColors();
+
+    // look for words that we know has synonym and wrap a span element around it
+    // arrayOfText is the content
+
+    var $text = $('#text_area');
+    var textVal = $text.text();
+    var arrayOfText = textVal.split(" ");
+    var $word;
+    // emtpy the text since we want span elements
+    $text.text("");
+    console.log('processing content: ' + textVal);
+
+    for (i = 0; i < arrayOfText.length; i++) {
+        var test = [];
+        $word = $('<span></span>').text(arrayOfText[i]);
+        test = getIndexOfWord(synoWords, arrayOfText[i]);
+        if (test.length > 0) {
+            $word.addClass('synonym');
+            $word.addClass('type_' + test[0]);
+
+            // maybe for id: 'type_' + test[0], 'index_' + test[1]
+        }
+        $text.append($word, " ");
+    }
 	
-	
-	// When the user clicks on <span> (x), close the modal
-
-
-	// When the user clicks anywhere outside of the modal, close it
-
-
+	// setup filepicker and upload buttons
 
 });
