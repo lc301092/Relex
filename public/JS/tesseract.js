@@ -42,6 +42,8 @@
     							console.log(result);
     							document.getElementById("text_area")
     								.innerText = result.text;
+							updateSynonyms();
+							setupSynonyms();
     						});
     				}
     				img.src = src;

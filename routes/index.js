@@ -38,7 +38,7 @@ router.post('/api/photo', function (req, res) {
 			console.log(err);
             return res.end("Error uploading file: " + err);
         }
-        res.end(tjek);
+        res.send(tjek);
     });
 });
 
