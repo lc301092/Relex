@@ -67,6 +67,7 @@ function updateSynonyms() {
 		var test = [];
 		$word = $('<span></span>').text(arrayOfText[i]);
 		test = getIndexOfWord(synoWords, arrayOfText[i]);
+			$word.addClass('text_span');
 		if (test.length > 0) {
 			$word.addClass('synonym');
 			$word.addClass('type_' + test[0]);
@@ -175,10 +176,7 @@ function setupSynonyms() {
 		var $synonym = $(this);
 		var activeSynonym = $synonym.text();
 		var $pos = $synonym.position();
-		var $modal = $('#popup');
 		$result.empty();
-		console.log('what: ', $pos);
-		console.log('what: ', popup);
 
 		// 30 vw is the relative off-set of the content div.
 		var left = 'calc(' + $pos.left + 'px + 30vw)';
@@ -209,14 +207,28 @@ function setupSynonyms() {
 		}
 
 		$('.synonym_item').click(function (event) {
-			console.log('tjek');
-			alert($(this).text());
+			//			console.log('tjek');
+			var $newWord = $(this).text();
+			//			alert($newWord);
+			//			console.log($synonym, $synonym.text());
+			$synonym.text($newWord);
+			popup.style.display = "none";
 		});
 
 	});
 
 }
 
-function checkSynonyms(){
-	console.log('ikke lavet endnu. der skal tjekkes om spans indeholder skriftlige ændringer, som trigger et synonym');
+function checkSynonyms() {
+	var $allSynonyms = $('.synonym');
+	console.log('there are ' + $allSynonyms.length + ' Synonyms');
+	for (i = 0; i < $allSynonyms.length; i++) {
+		var check = getIndexOfWord(synoWords, $allSynonyms[i].innerText);
+		if(!check.length > 0){
+		console.log('remove class');
+		$($allSynonyms[i]).removeClass('synonym').unbind();
+			
+		}
+	}
+
 }

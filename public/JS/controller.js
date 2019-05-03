@@ -47,13 +47,7 @@ $(document).ready(function () {
 	updateSynonyms();
 	setupSynonyms();
 
-	
-	
-	// When the user clicks on <span> (x), close the modal
-
-
-	// When the user clicks anywhere outside of the modal, close it
-
-
-
+	$('.text_span').change(function () {
+		console.log('test');
+	});
 });
