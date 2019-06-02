@@ -6,28 +6,23 @@ function updateSpacing() {
 
 function updateDifficulty() {
 	// Here should call the algorithm which will return some information
-	// for now we will use synoWords which is a hardcoded variable.
-	// this is either 0,1,2
+	// for now we will use synoWords 2d array which is a hardcoded variable.
 	var difficulty = $('#p4').val();
 	var $synonyms = $('#text_area .synonym');
 	console.log('synonyms should be changed to difficulty: ' + difficulty + ", there are " + $synonyms.length + " words to change");
 	//	console.log($synonyms[0].getAttribute('class'));
 
-	var fl = 'type_';
+	var filter = 'type_';
 	for (i = 0; i < $synonyms.length; i++) {
-		// get class into variable 
-		// cut off type_ maybe find better solution then pop sometime?
-		var type = $synonyms[i].getAttribute('class').split(fl).pop();
+		// get type_x class variable 
+		// cut off type_
+		var type = $synonyms[i].getAttribute('class').split(filter).pop();
 		$synonyms[i].innerHTML = synoWords[type][difficulty];
-		// use [other part of type_][index]
-		// text(with 2d aboveindex)	
 	}
 
 }
 
 function setupFonts() {
-	// named incorrectly it also updates fonts
-	// should be split into two functions or renamed
 	var $menu = $("#p2");
 	for (i = 0; i < fontTypes.length; i++) {
 		var $option = $('<option/>');
@@ -39,8 +34,6 @@ function setupFonts() {
 }
 
 function setupColors() {
-	// named incorrectly it also updates fonts
-	// should be split into two functions or renamed
 	var $menu = $("#p3");
 	for (i = 0; i < textNback.length; i++) {
 		var $option = $('<option/>');
@@ -48,35 +41,35 @@ function setupColors() {
 		$option.text(textNback[i]);
 		$menu.append($option);
 	}
-
 }
-
 
 function updateSynonyms() {
 	var $text = $('#text_area');
 	var textVal = $text.text().trim();
 
-	// arrayOfText[]
+	// save text in arrayOfText[]
 	var arrayOfText = textVal.split(" ");
+	
 	var $word;
-	// emtpy the text since we want span elements
+	// emtpy the text since we want to fill in span elements
 	$text.text("");
 	console.log('processing content: ' + textVal);
 
+	// go over the text 
+	// 
 	for (i = 0; i < arrayOfText.length; i++) {
-		var test = [];
+		var synoIndex = [];
 		$word = $('<span></span>').text(arrayOfText[i]);
-		test = getIndexOfWord(synoWords, arrayOfText[i]);
+		// if the word is in 2d array synoWords
+		// return the index for which array it is in 
+		synoIndex = getIndexOfWord(synoWords, arrayOfText[i]);
 			$word.addClass('text_span');
-		if (test.length > 0) {
+		if (synoIndex.length > 0) {
 			$word.addClass('synonym');
-			$word.addClass('type_' + test[0]);
-			// this is needed to open the modal listener.
-
-
-			// maybe for id: 'type_' + test[0], 'index_' + test[1]
+			$word.addClass('type_' + synoIndex[0]);
 		}
 		$text.append($word);
+		// this is currently the way white spaces are placed in the text.
 		$text.append(' ');
 	}
 }
@@ -92,6 +85,7 @@ function updateFont() {
  * @param k {object} - the value to search
  * @return {Array} 
  */
+// note that this does not handle multiple instances of the same word.
 function getIndexOfWord(arr, k) {
 	if (!arr) {
 		return [];
@@ -111,16 +105,15 @@ function updateFontSize() {
 	$("#text_area").css("font-size", size / 12 + 'em');
 }
 
-function pageLayout() {
-	// Here we should make some premade page layouts that fit dyslexics. 
-
-}
 
 function updateColors() {
 	var data = $("#p3").val();
 	var text;
 	var background;
 
+	// some color strings are hardcoded 
+	/* the if statements catches the important colors that needs
+	 a specific string in css */
 	if (data == 'normal') {
 		data = 'black, cornsilk';
 	}
@@ -159,12 +152,12 @@ function updateParagraphs() {
 	// get slider value
 
 }
-// different from setup in that it goes towards the intented interaction
 function setupSynonyms() {
-
+// fetch the relevant elements of the modal
+/* note there is no modal overlay, so the modal 
+cannot detect clicks outside the modal yet*/
 	var modal = document.getElementById('#synonym_modal');
 	var span = document.getElementsByClassName("close")[0];
-	//	var modal = document.getElementById('myModal');
 	var popup = document.getElementsByClassName('popup')[0];
 	var $result = $('#result_synonyms');
 
@@ -179,6 +172,7 @@ function setupSynonyms() {
 		$result.empty();
 
 		// 30 vw is the relative off-set of the content div.
+		// these configuration seems to work fine for now
 		var left = 'calc(' + $pos.left + 'px + 30vw)';
 		var top = 'calc( 90px + ' + $pos.top + 'px + 9vw)';
 		popup.style.top = top;
@@ -191,9 +185,9 @@ function setupSynonyms() {
 			return (parseInt(item) == item);
 		})[0];
 
-		// for loop her
+		// for loop here
+		// find the index of the array that holds the synonym that the user clicked. 
 		var categoryIndex = getIndexOfWord(synoWords, activeSynonym);
-		console.log(categoryIndex);
 		var category = synoWords[categoryIndex[0]];
 		for (i = 0; i < category.length; i++) {
 			if (activeSynonym != category[i]) {
@@ -207,10 +201,7 @@ function setupSynonyms() {
 		}
 
 		$('.synonym_item').click(function (event) {
-			//			console.log('tjek');
 			var $newWord = $(this).text();
-			//			alert($newWord);
-			//			console.log($synonym, $synonym.text());
 			$synonym.text($newWord);
 			popup.style.display = "none";
 		});

@@ -10,6 +10,8 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use('/', indexRouter);
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({
@@ -18,7 +20,6 @@ app.use(express.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -21,7 +21,7 @@ const fontTypes = [
 	'Georgia',
 	'Palatino',
 	'Calibri'
-];
+]
 
 const textNback = [
 	['normal'],
