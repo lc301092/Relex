@@ -221,5 +221,16 @@ function checkSynonyms() {
 			
 		}
 	}
-
+}
+function test(){
+	var menu = $('#menu');
+	var isHidden = menu.css('disabled');
+	if(isHidden){
+		alert("make visible");
+		menu.disabled == 'false';
+	}
+	else{
+		alert("make hidden");
+		menu.disabled == 'true';
+	}
 }

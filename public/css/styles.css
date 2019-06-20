@@ -40,6 +40,15 @@ body {
 	text-align: center;
 } 
 
+#imgOptions{
+	position: fixed;
+}
+
+#imgOptions::hover{
+cursor: pointer;
+}
+
+
 #controller {
     display: inline-block;
     position: fixed;

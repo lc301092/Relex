@@ -46,8 +46,4 @@ $(document).ready(function () {
 	setupColors();
 	updateSynonyms();
 	setupSynonyms();
-
-	$('.text_span').change(function () {
-		console.log('test');
-	});
 });

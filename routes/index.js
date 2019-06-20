@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var multer = require('multer');
+var MiriamSeHer = require('miriamTest.js');
+
 
 // multer storage
-var storage = multer.diskStorage({
+var storage = multer.diskStorage(
+	{
 	// define file destination
 	destination: function (req, file, callback) {
 		var dest = './public/images/uploads';
@@ -16,7 +19,8 @@ var storage = multer.diskStorage({
 		var imgName = file.fieldname + '-' + Date.now() + '.png';
 		callback(null, imgName);
 	}
-});
+}
+);
 
 // multer upload needs name attribute of input
 var upload = multer({
@@ -31,15 +35,20 @@ router.get('/', function (req, res) {
 });
 router.get('/tekstb', function (req, res, next) {
 	res.render('tekstb', {
-		title: 'Prototype v1 Relex test'
+		title: 'Prototype v1 Relex test',
+		test2: {
+			msg1: "BABA",
+			msg2: "NARA"
+		}
 	});
 });
 
 
+
 // handle file upload.
 router.post('/api/photo', function (req, res) {
-	
-// the annonymous function is executed when the destination and filename is set.
+
+	// the annonymous function is executed when the destination and filename is set.
 	upload(req, res, function (err) {
 		var file = JSON.stringify(req.file);
 		// tesseract could be performed here sometime
