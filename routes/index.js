@@ -29,8 +29,8 @@ router.get('/', function (req, res) {
 		title: 'Prototype v2 Relex'
 	});
 });
-router.get('/tekstb', function (req, res, next) {
-	res.render('tekstb', {
+router.get('/spil2', function (req, res, next) {
+	res.render('inspiration', {
 		title: 'Prototype v1 Relex test'
 	});
 });
@@ -38,8 +38,8 @@ router.get('/tekstb', function (req, res, next) {
 
 // handle file upload.
 router.post('/api/photo', function (req, res) {
-	
-// the annonymous function is executed when the destination and filename is set.
+
+	// the annonymous function is executed when the destination and filename is set.
 	upload(req, res, function (err) {
 		var file = JSON.stringify(req.file);
 		// tesseract could be performed here sometime
